@@ -552,7 +552,6 @@ a:active {
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	display: block;
 	float: left;
 	width: 100%;
 }
@@ -702,13 +701,11 @@ a:active {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
