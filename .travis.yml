@@ -63,6 +63,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
+    - npm install
 
 # Run test script commands.
 # Default is specific to project language.
@@ -70,6 +71,10 @@ before_script:
 script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+    # Run the theme through lint:js checker as defined in @wordpress/scripts package.
+    - if [[ "$PHPCS" == 1 ]]; then npm run lint:js; fi
+  # Run the theme through lint:css checker as defined in @wordpress/scripts package.
+  - if [[ "$PHPCS" == 1 ]]; then npm run lint:scss; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link https://pear.php.net/package/PHP_CodeSniffer/
