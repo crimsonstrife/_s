@@ -13,8 +13,6 @@ dist: trusty
 # Declare project language.
 # @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
-node_js:
-  - 12
 
 # Declare versions of PHP to use. Use one decimal max.
 # @link https://docs.travis-ci.com/user/build-configuration/
@@ -40,6 +38,7 @@ matrix:
         - php: 'nightly'
 
 before_install:
+    - npm i -g npm
     - npm install
 # Use this to prepare the system to install prerequisites or dependencies.
 # e.g. sudo apt-get update.
