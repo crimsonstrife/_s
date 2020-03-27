@@ -13,6 +13,9 @@ dist: trusty
 # Declare project language.
 # @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
+language: node_js
+node_js:
+  - 12
 
 # Declare versions of PHP to use. Use one decimal max.
 # @link https://docs.travis-ci.com/user/build-configuration/
