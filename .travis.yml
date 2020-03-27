@@ -13,7 +13,6 @@ dist: trusty
 # Declare project language.
 # @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
-language: node_js
 node_js:
   - 12
 
