@@ -38,7 +38,7 @@ matrix:
         - php: 'nightly'
 
 before_install:
-    - nvm install
+    - nvm install lts
     - npm install
 # Use this to prepare the system to install prerequisites or dependencies.
 # e.g. sudo apt-get update.
