@@ -2,7 +2,7 @@
 	"extends": [
 		"stylelint-config-wordpress/scss"
 	],
-	"rules": {
-		"no-descending-specificity": null
-	}
+	"ignoreFiles": [
+		"sass/_normalize.scss"
+	]
 }
