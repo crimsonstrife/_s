@@ -20,8 +20,7 @@
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
 		"jakub-onderka/php-parallel-lint": "^1.0",
-		"wptrt/wpthemereview": "^0.2.1",
-		"phpcompatibility/phpcompatibility-wp": "^2.1"
+		"wptrt/wpthemereview": "^0.2.1"
 	},
 	"scripts": {
 		"checkcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --runtime-set testVersion 5.6-",
