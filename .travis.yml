@@ -17,9 +17,6 @@ php:
   - 7.2
   - "7.4snapshot"
 
-  node_js:
-  - '12'
-
 matrix:
   fast_finish: true
   include:
@@ -36,6 +33,7 @@ before_install:
   # @link https://twitter.com/kelunik/status/954242454676475904
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
 
+  - nvm install
   - composer install
   - npm install
 
