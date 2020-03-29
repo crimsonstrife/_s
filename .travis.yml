@@ -33,7 +33,7 @@ before_install:
   # @link https://twitter.com/kelunik/status/954242454676475904
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
 
-  - nvm install
+  - nvm install --lts
   - composer install
   - npm install
 
