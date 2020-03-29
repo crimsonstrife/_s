@@ -45,8 +45,10 @@
 	#############################################################################
 	-->
 
-	<rule ref="WordPress"/>
 	<rule ref="WPThemeReview"/>
+	<rule ref="WordPress">
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
+	</rule>
 
 
 	<!--
@@ -54,12 +56,6 @@
 	SNIFF SPECIFIC CONFIGURATION
 	#############################################################################
 	-->
-
-	<rule ref="WordPress">
-		<!-- _e() and _ex() are considered safe for core translations. -->
-		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
-	</rule>
-
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
