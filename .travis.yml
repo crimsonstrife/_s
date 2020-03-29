@@ -17,6 +17,9 @@ php:
   - 7.2
   - "7.4snapshot"
 
+  node_js:
+  - '12'
+
 matrix:
   fast_finish: true
   include:
