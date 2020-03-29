@@ -41,11 +41,11 @@
 
 	<!--
 	#############################################################################
-	USE THE WordPress RULESET
+	USE THE WordPress Theme Review RULESET
 	#############################################################################
 	-->
 
-	<rule ref="WordPress"/>
+	<rule ref="WPThemeReview"/>
 
 
 	<!--
