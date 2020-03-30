@@ -1,12 +1,25 @@
+# Travis CI (MIT License) configuration file for the Underscores WordPress theme.
+# @link https://travis-ci.org/
+
+# For use with the Underscores WordPress theme.
+# @link https://github.com/Automattic/_s
+
+# Tell Travis CI which distro to use.
 dist: trusty
 
+# Cache directories between builds.
+# @link https://docs.travis-ci.com/user/caching/#arbitrary-directories
 cache:
   directories:
+    # Cache directory for npm.
+    - $HOME/.npm
     # Cache directory for older Composer versions.
     - $HOME/.composer/cache/files
     # Cache directory for more recent Composer versions.
     - $HOME/.cache/composer/files
 
+# Declare project language.
+# @link https://docs.travis-ci.com/user/languages/php/
 language:
   - php
 
@@ -25,12 +38,12 @@ matrix:
 
 before_install:
   # Speed up build time by disabling Xdebug.
-  # @link https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
-  # @link https://twitter.com/kelunik/status/954242454676475904
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
-
+  # Download and install the latest long-term support release of node.
   - nvm install --lts
+  # Install Composer dependencies.
   - composer install
+  # Install NPM dependencies.
   - npm install
 
 script:
@@ -49,3 +62,8 @@ script:
 
   # Run the theme through lint:css checker as defined in @wordpress/scripts package.
   - if [[ "$PHPCS" == 1 ]]; then npm run lint:scss; fi
+
+# Receive notifications for build results.
+# @link https://docs.travis-ci.com/user/notifications/#configuring-email-notifications
+notifications:
+    email: false
