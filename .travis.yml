@@ -29,17 +29,12 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - nightly
 
 matrix:
   fast_finish: true
   include:
     - php: 7.4
       env: PHPCS=1
-
-allow_failures:
-  # Allow failures for unstable builds.
-  - php: nightly
 
 before_install:
   # Speed up build time by disabling Xdebug.
