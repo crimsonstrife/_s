@@ -75,6 +75,14 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: single.php:21
+msgid "Previous:"
+msgstr ""
+
+#: single.php:22
+msgid "Next:"
+msgstr ""
+
 #: inc/template-tags.php:52
 #. translators: used between list items, there is a space after the comma
 msgid ", "
