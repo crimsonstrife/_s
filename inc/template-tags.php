@@ -127,28 +127,27 @@ if ( ! function_exists( '_s_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+<div class="post-thumbnail">
+    <?php the_post_thumbnail(); ?>
+</div><!-- .post-thumbnail -->
 
-		<?php else : ?>
+<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
-			</a>
+<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+    <?php
+			$post_thumbnail_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+			if( empty( $post_thumbnail_alt ) ) {
+				$post_thumbnail_alt = the_title_attribute( array(
+					'echo' => false,
+				) );
+			}
+			the_post_thumbnail( 'post-thumbnail', array(
+				'alt' => sanitize_text_field( $post_thumbnail_alt ),
+			) );
+			?>
+</a>
 
-			<?php
+<?php
 		endif; // End is_singular().
 	}
 endif;
