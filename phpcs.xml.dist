@@ -107,4 +107,5 @@
 	<config name="testVersion" value="5.6-"/>
 	<rule ref="PHPCompatibilityWP"/>
 
+	<exclude-pattern>rtl.css</exclude-pattern>
 </ruleset>
